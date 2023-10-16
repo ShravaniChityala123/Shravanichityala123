@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            position: relative;
+            top: 100px;
+            /* background-color: black; */
+        }
+        #screen
+        {
+            height: 40px;
+            width: 300px;
+            background-color: white;
+            color: black;
+            text-align: end;
+        }
+        input{
+            width: 80px;
+            height: 50px;
+            font-size: 30px;
+            background-color: black;
+            color: white;
+            border: 0px;
+        }
+.num{
+    background-color: black;
+    
+}
+.op{
+    background-color: gray;
+}
+.op1{
+    background-color: gray;
+}
+body{
+    background-color: bisque;
+}
+    </style>
+</head>
+<body>
+    <center>
+    <table rules="all" border="1px solid black" cellpadding="20px">
+    
+        <tr>
+            <td colspan="3" style="border-color: white;background-color: white;"><input type="button" value="" id="screen"></td>
+            <td style="background-color: green;"><input type="button" value="AC" onclick="clear1()"style="background-color: green;"></td>
+        </tr>
+        <tr>
+            <td class="num"><input type="button" value="9" onclick="click11('9')"></td>
+            <td class="num"><input type="button" value="8" onclick="click11('8')"></td>
+            <td class="num"><input type="button" value="7" onclick="click11('7')"></td>
+            <td class="op"><input type="button" value="+" onclick="click11('+')" class="op1"></td>
+        </tr>
+        <tr>
+            <td class="num"><input type="button" value="4" onclick="click11('4')"></td>
+            <td class="num"><input type="button" value="5" onclick="click11('5')"></td>
+            <td class="num"><input type="button" value="6" onclick="click11('6')"></td>
+            <td class="op"><input type="button" value="-" onclick="click11('-')"class="op1"></td>
+        </tr>
+        <tr>
+            <td class="num"><input type="button" value="1" onclick="click11('1')"></td>
+            <td class="num"><input type="button" value="2" onclick="click11('2')"></td>
+            <td class="num"><input type="button" value="3" onclick="click11('3')"></td>
+            <td class="op"><input type="button" value="/" onclick="click11('/')"class="op1"></td>
+        </tr>
+        <tr>
+            <td class="num"><input type="button" value="." onclick="click11('.')"></td>
+            <td class="num"><input type="button" value="0" onclick="click11('0')"></td>
+            <td class="num"><input type="button" value="=" onclick="evals()"></td>
+            <td class="op"><input type="button" value="*" onclick="click11('*')"class="op1"></td>
+        </tr>
+    </table>
+    </center>
+
+    <script>
+        function click11(a){
+            document.getElementById("screen").value+=a;
+
+        }
+
+        function evals()
+        {
+            let a=document.getElementById("screen").value;
+            let b=eval(a)
+            document.getElementById("screen").value=b;
+        }
+
+        function clear1()
+        {
+            let a=document.getElementById("screen").value=""
+        }
+
+        // function del34()
+        // {
+        //     let a=document.getElementById("screen").value
+        //     a=a.slice(0,-1);
+        //     document.getElementById("screen").value=a;
+        // }
+    </script>
+</body>
+</html>
+
